@@ -27,12 +27,14 @@ public class Minimum_Spanning_Tree {
 
         if (graph.isContinuousGraph()) {
             System.out.println("The graph is a connected graph.");
+            System.out.println();
 
             // เพิ่ม switch case เพื่อให้ผู้ใช้เลือกใช้ Algorithm
-            System.out.println("Select algorithm:");
+            System.out.println("Select algorithm :");
             System.out.println("1. Prim's Algorithm");
             System.out.println("2. Kruskal's Algorithm");
             System.out.println("3. Shortest Path Algorithm");
+            System.out.print("Enter your choice : ");
 
             int choice = scanner.nextInt();
             switch (choice) {

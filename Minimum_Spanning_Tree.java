@@ -1,54 +1,60 @@
-import java.util.List;
+
 import java.util.Scanner;
 
 public class Minimum_Spanning_Tree {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the numbers of vertex : ");
-        int V = sc.nextInt();
-        System.out.print("Enter the numbers of edges : ");
-        int E = sc.nextInt();
-        
-        Graph graph = new Graph(V, E);
-        System.out.println("Enter edges in the  form (source destination weight) : ");
-        for  (int i=0; i<E ;i++) {
-            int src = sc.nextInt();
-            int dest = sc.nextInt();
-            int weight = sc.nextInt();
-            graph.addEdge(src, dest, weight);
-        }
-        if (!graph.isConnected()) {
-            System.out.println("The graph is not connected");
-            System.exit(0);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of vertices: ");
+        int vertices = scanner.nextInt();
+
+        System.out.print("Enter number of edges: ");
+        int edgesCount = scanner.nextInt();
+
+        Graph graph = new Graph(vertices);
+
+        for (int i = 0; i < edgesCount; i++) {
+            System.out.print("Enter edge " + (i + 1) + " details (source dest weight): ");
+            String source = scanner.next();
+            String dest = scanner.next();
+            int weight = scanner.nextInt();
+
+            // แปลง source และ dest เป็นตัวเลข
+            int sourceIndex = source.charAt(0) - 'A';
+            int destIndex = dest.charAt(0) - 'A';
+
+            graph.addEdge(sourceIndex, destIndex, weight);
         }
 
-        System.out.println("Select Algorithm : ");
-        System.out.println("1. Prim's Algorithm");
-        System.out.println("2. Kruskal's Algorithm");
-        System.out.println("3. Shortest Path Algorithm");
-        System.out.println("Enter your choice : ");
-        int ch = sc.nextInt();
+        if (graph.isContinuousGraph()) {
+            System.out.println("The graph is a connected graph.");
 
-        List<Edge> mst ;
-        switch (ch) {
-            case 1:
-                mst = graph.primMST();
-                break;
-            case 2 :
-                mst  = graph.kruskalMST();
-                break;
-            case 3 : 
-                // mst = graph.
-            default:
-                System.out.println("Invalid choice. Please enter again.");
-                return;
-        }
-        System.out.println("Minimum Spanning Tree : ");
-        for (Edge edge : mst) {
-            System.out.println(edge.src + " - " + edge.dest + " : " + edge.weight);
-            
+            // เพิ่ม switch case เพื่อให้ผู้ใช้เลือกใช้ Algorithm
+            System.out.println("Select algorithm:");
+            System.out.println("1. Prim's Algorithm");
+            System.out.println("2. Kruskal's Algorithm");
+            System.out.println("3. Shortest Path Algorithm");
+
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    graph.prim();
+                    break;
+                case 2:
+                    graph.kruskal();
+                    break;
+                case 3:
+                    System.out.print("Enter starting vertex (A-Z): ");
+                    char startVertex = scanner.next().charAt(0);
+                    graph.shortestPathFromVertex(startVertex);
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        } else {
+            System.out.println("The graph is not a connected graph.");
         }
 
+        scanner.close();
     }
     
 }

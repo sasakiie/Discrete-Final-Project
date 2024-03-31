@@ -107,7 +107,7 @@ class Graph {
         return -1;
     }
     
-    //kruska
+    //kruskal 
 
     public void kruskal() {
         ArrayList<Edge> result = new ArrayList<>();

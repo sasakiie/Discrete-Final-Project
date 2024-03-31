@@ -10,7 +10,7 @@ public class Minimum_Spanning_Tree {
         int E = sc.nextInt();
         
         Graph graph = new Graph(V, E);
-        System.out.println("Enter edges in the  form (u v w) : ");
+        System.out.println("Enter edges in the  form (source destination weight) : ");
         for  (int i=0; i<E ;i++) {
             int src = sc.nextInt();
             int dest = sc.nextInt();

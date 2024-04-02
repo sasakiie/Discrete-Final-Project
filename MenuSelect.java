@@ -75,7 +75,7 @@ public class MenuSelect {
                 }
                 break;
             case 4:
-                System.out.println("Enter the Automata Input : ");
+                System.out.println("Enter the Automata Input (using 1 or 0 ex.110101): ");
                 String input = scanner.nextLine();
 
                 Automata atm = new Automata();
@@ -94,7 +94,7 @@ public class MenuSelect {
     }
 
     public static void edgeInput(int i) {
-        System.out.print("Enter edge " + i + " details (source dest weight): ");
+        System.out.print("Enter edge " + i + " details -> source dest weight (source & dest using A-Z ex.A G 5): ");
         source = scanner.next();
         dest = scanner.next();
         weight = scanner.nextInt();

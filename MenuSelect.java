@@ -96,7 +96,7 @@ public class MenuSelect {
     }
 
     public static void edgeInput(int i) {
-        System.out.print("Enter edge " + i + " details -> source dest weight (source & dest using A-Z ex.A G 5): ");
+        System.out.print("Enter edge " + i + " details -> source dest weight (using A-Z ex.A G 5): ");
         source = scanner.next();
         dest = scanner.next();
         weight = scanner.nextInt();

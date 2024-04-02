@@ -1,6 +1,5 @@
-
-class Edge {
-    int source, dest, weight;
+public class Edge {
+    protected int source, dest, weight;
 
     public Edge(int source, int dest, int weight) {
         this.source = source;
@@ -8,17 +7,3 @@ class Edge {
         this.weight = weight;
     }
 }
-
-
-
-    
-    
-    
-    
-    
-    
-    
-
-
-
-

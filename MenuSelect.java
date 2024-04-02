@@ -74,6 +74,7 @@ public class MenuSelect {
                     System.out.println("The graph is not a connected graph.");
                 }
                 break;
+                
             case 4:
                 System.out.println("Enter the Automata Input (using 1 or 0 ex.110101): ");
                 String input = scanner.nextLine();

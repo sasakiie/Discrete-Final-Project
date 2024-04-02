@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Graph {
-    int vertices;
-    ArrayList<Edge> edges;
+    protected int vertices;
+    protected ArrayList<Edge> edges;
     
     public Graph(int vertices) {
         this.vertices = vertices;

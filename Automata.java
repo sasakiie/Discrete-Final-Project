@@ -13,7 +13,7 @@ public class Automata {
                     if (currentChar == '1') {
                         currentState = State.START;
                     }
-                    if (currentChar == '0') {
+                    else if (currentChar == '0') {
                         currentState = State.STATE_1;
                     }
                     else{

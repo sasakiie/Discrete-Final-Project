@@ -77,7 +77,7 @@ public class MenuSelect {
                 
             case 4:
                 Scanner sc = new Scanner(System.in);
-                System.out.println("Enter the Automata Input (using 1 or 0 ex.110101): ");
+                System.out.print("Enter the Automata Input (using 1 or 0 ex.110101): ");
                 String input = sc.nextLine();
 
                 Automata atm = new Automata();

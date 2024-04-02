@@ -4,7 +4,6 @@ import java.util.Map;
 public class Shortestpath  extends Graph{
     public Shortestpath(int vertices) {
         super(vertices);
-        //TODO Auto-generated constructor stub
     }
 
     //shortest

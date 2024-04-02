@@ -99,7 +99,6 @@ public class MenuSelect {
         dest = scanner.next();
         weight = scanner.nextInt();
 
-        // แปลง source และ dest เป็นตัวเลข
         sourceIndex = source.charAt(0) - 'A';
         destIndex = dest.charAt(0) - 'A';
     }

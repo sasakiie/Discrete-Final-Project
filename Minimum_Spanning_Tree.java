@@ -13,7 +13,7 @@ public class Minimum_Spanning_Tree {
                 int vertices_case1 = scanner.nextInt();
                 System.out.print("Enter number of edges: ");
                 int edgesCount_case1 = scanner.nextInt();
-                Graph graph1 = new Graph(vertices_case1);
+                Prim prim = new Prim(vertices_case1);
                 for(int i = 0; i < edgesCount_case1; i++){
                     System.out.print("Enter edge " + (i + 1) + " details (source dest weight): ");
                     String source = scanner.next();
@@ -24,13 +24,13 @@ public class Minimum_Spanning_Tree {
                     int sourceIndex = source.charAt(0) - 'A';
                     int destIndex = dest.charAt(0) - 'A';
 
-                    graph1.addEdge(sourceIndex, destIndex, weight);
+                    prim.addEdge(sourceIndex, destIndex, weight);
                 }
 
-                if (graph1.isContinuousGraph()) {
+                if (prim.isContinuousGraph()) {
                     System.out.println("The graph is a connected graph.");
                     System.out.println();
-                    graph1.prim();
+                    prim.primMethod();
                 }
                 else{
                     System.out.println("The graph is not a connected graph.");
@@ -42,7 +42,7 @@ public class Minimum_Spanning_Tree {
                 int vertices_case2 = scanner.nextInt();
                 System.out.print("Enter number of edges: ");
                 int edgesCount_case2 = scanner.nextInt();
-                Graph graph2 = new Graph(vertices_case2);
+                Kruskal kruskal = new Kruskal(vertices_case2);
                 for(int i = 0; i < edgesCount_case2; i++){
                     System.out.print("Enter edge " + (i + 1) + " details (source dest weight): ");
                     String source = scanner.next();
@@ -53,13 +53,13 @@ public class Minimum_Spanning_Tree {
                     int sourceIndex = source.charAt(0) - 'A';
                     int destIndex = dest.charAt(0) - 'A';
 
-                    graph2.addEdge(sourceIndex, destIndex, weight);
+                    kruskal.addEdge(sourceIndex, destIndex, weight);
                 }
 
-                if (graph2.isContinuousGraph()) {
+                if (kruskal.isContinuousGraph()) {
                     System.out.println("The graph is a connected graph.");
                     System.out.println();
-                    graph2.kruskal();
+                    kruskal.kruskalMethod();
                 }
                 else{
                     System.out.println("The graph is not a connected graph.");
@@ -71,7 +71,7 @@ public class Minimum_Spanning_Tree {
                 int vertices_case3 = scanner.nextInt();
                 System.out.print("Enter number of edges: ");
                 int edgesCount_case3 = scanner.nextInt();
-                Graph graph3 = new Graph(vertices_case3);
+                Shortestpath stp = new Shortestpath(vertices_case3);
                 for(int i = 0; i < edgesCount_case3; i++){
                     System.out.print("Enter edge " + (i + 1) + " details (source dest weight): ");
                     String source = scanner.next();
@@ -82,14 +82,14 @@ public class Minimum_Spanning_Tree {
                     int sourceIndex = source.charAt(0) - 'A';
                     int destIndex = dest.charAt(0) - 'A';
 
-                    graph3.addEdge(sourceIndex, destIndex, weight);
+                    stp.addEdge(sourceIndex, destIndex, weight);
                 }
 
-                if (graph3.isContinuousGraph()) {
+                if (stp.isContinuousGraph()) {
                     System.out.println("The graph is a connected graph.");
                     System.out.print("Enter starting vertex (A-Z): ");
                     char startVertex = scanner.next().charAt(0);
-                    graph3.shortestPathFromVertex(startVertex);
+                    stp.shortestPathFromVertex(startVertex);
                 }
                 else{
                     System.out.println("The graph is not a connected graph.");
